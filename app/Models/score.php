@@ -14,8 +14,8 @@ class score extends Model
         return $this->belongsTo(Quiz::class);
     }
 
-    public function user(){
-        return $this->belongsTo(myUser::class);
+    public function users(){
+        return $this->belongsTo(User::class);
     }
 
 }

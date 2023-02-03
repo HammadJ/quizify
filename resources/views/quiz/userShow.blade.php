@@ -48,20 +48,35 @@
             background-color: #781eff;
         }
 
-        .topright {
-            position: sticky;
-            font-size: 18px;
+        b{
+            text-align: center;
+            
+        }
+
+        div.topright {
+            position: fixed;
+            text-align: center;
+            background-color: #781eff;
+            border-radius: 50%;
+            padding: 25px 25px;
+            width: 50px;
+            height: 50px;
+            margin-left: 175vh;
         }
     </style>
 
     <p hidden>{{ $i = -1 }}</p>
+
+
+    <div class="topright">
+        <b id="timer">{{ count($question) * 60 }} </b>
+        <b>seconds</b>
+    </div>
     <div class="quiz-container">
 
-
-
-        <span>Form will automatically submit in <b>{{ count($question) * 20 }}</b> <b>seconds</b>.</span>
-        <span class="topright"><b id="timer">{{ count($question) * 20 }}</b> <b>seconds</b>.</span>
-
+        <span>Form will automatically submit in <b>{{ count($question) * 60 }}</b>
+            <b>seconds</b>.
+        </span>
 
         <h1>Quiz Name</h1>
         <form id="quiz-form" action="../cal-score" name="quiz_form">
@@ -96,14 +111,14 @@
             <button class="submit">Submit Quiz</button>
         </form>
 
-        
+
 
         <script>
             window.onload = function() {
                 // Onload event of Javascript
                 // Initializing timer variable
                 var i = {{ $i + 1 }};
-                var x = 20 * i;
+                var x = 60 * i;
                 var y = document.getElementById("timer");
                 // Display count down for 20s
                 setInterval(function() {

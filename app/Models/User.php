@@ -42,7 +42,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function Scores(){
-        return $this->hasOne(Score::class);
+    public function scores(){
+        return $this->hasMany(Score::class);
     }
 }

@@ -36,6 +36,21 @@
         border-radius: 4px;
     }
 
+    input::file-selector-button {
+        font-weight: bold;
+        color: #9149fe;
+        padding: 0.6em;
+        font-family: 'Varela Round', sans-serif;
+        border: 1px solid #9149fe;
+        border-radius: 3px;
+        background-color: white;
+        margin-right: 10px;
+    }
+
+    input[type="file"] {
+        font-family: 'Varela Round', sans-serif;
+        
+    }
 
     button[type="submit"] {
         width: 100%;

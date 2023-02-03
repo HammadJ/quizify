@@ -72,6 +72,7 @@
         @forelse ($score as $s)
             <div class="row highlight">
                 <div class="rank">{{ $i++ }}</div>
+                {{-- {{dd($s->user_id)}} --}}
                 <div class="name">{{ $s->user_id }}</div>
                 <div class="name">{{ $s->quiz_id }}</div>
                 <div class="name">{{ $s->totalScore }}</div>

@@ -1,14 +1,53 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <title>Quizify</title>
 
+</head>
 
-<a href="create-quiz">admin create quiz</a> <br>
-<a href="index-quiz">show all quiz admin</a> <br>
-<a href="index-quiz">show single quiz admin</a> <br>
-<a href="userIndex-quiz">show user quiz</a> <br>
-<a href="userShow-quiz">start user quiz</a> <br>
-
-
-<title>Quizify</title>
 <style>
+    body {
+        font-family: 'Varela Round', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #c1c0f7;
+    }
+
+    header {
+        border-radius: 10px;
+        background-color: #ddddff;
+        color: #6245a0;
+        padding: 20px;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+    }
+
+    nav a {
+        font-weight: bold;
+        color: #6245a0;
+        text-decoration: none;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    nav ul li {
+        margin-right: 70px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #463bad;
+    }
+
     .hero-section {
         background: url(hero.jpg) 0 0 no-repeat fixed;
         position: relative;
@@ -78,9 +117,21 @@
         flex: 1;
         text-align: center;
     }
-</style>
 
-<div class="hero-section">
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+    }
+</style>
+<header>
+
+    <nav>
+        <a href="#" class="logo">Quizify</a>
+    </nav>
+</header>
+<div class="hero-section" >
     <div class="hero-overlay">
         <div class="hero-text">
             <h1>Welcome to Our Quiz Website</h1>

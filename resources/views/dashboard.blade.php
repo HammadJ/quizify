@@ -1,18 +1,18 @@
-<x-app-layout>
+@extends('layouts/master')
+<title>Quiz Name</title>
 
+@section('contents')
     <style>
         .hero-section {
             background: url(hero.jpg) 0 0 no-repeat fixed;
-            position: relative;
             position: absolute;
-            top: 50%;
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
             border-radius: 30px;
             width: 95%;
-            height: 100%;
+            height: 80%;
             object-fit: cover;
-            height: 700px;
             background-size: cover;
             background-position: center;
         }
@@ -72,7 +72,7 @@
         }
     </style>
 
-    <div class="hero-section">
+    <div class="hero-section" >
         <div class="hero-overlay">
             <div class="hero-text">
                 <h1>Welcome to Our Quiz Website</h1>
@@ -88,4 +88,4 @@
         </div>
     </div>
 
-</x-app-layout>
+@endsection

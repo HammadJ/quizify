@@ -15,11 +15,18 @@
         }
 
         h1 {
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         .question {
-            margin-top: 50px;
+            background-color: #9149fe1e;
+            padding: 20px 20px;
+            margin-top: 30px;
+            border-radius: 20px;
+        }
+
+        .option{
+            font-size: 20px;
         }
 
         label {
@@ -30,6 +37,28 @@
 
         input[type="radio"] {
             margin-right: 10px;
+        }
+
+        h5{
+            font-weight: lighter;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        h2{
+            margin-top: 1px;
+        }
+
+        .correctOption{
+            font-size: 20px;
+            background-color: #9149fe;
+            border-radius: 10px;
+            width: 40%;
+            color:white;
+            text-align: center;
+            
+            margin: auto;
+            padding:10px 10px;
         }
 
         #submit {
@@ -54,13 +83,13 @@
         <h1>{{ $quiz->title }}</h1>
         @forelse ($question as $q)
             <div class="question">
-                <h2>Question {{ $i++ }}</h2>
+                <h5>QUESTION {{ $i++ }}</h5>
                 <h2>{{ $q->question }}</h2>
-                Option 1: {{ $q->option1 }} </br>
-                Option 2: {{ $q->option2 }} </br>
-                Option 3: {{ $q->option3 }} </br>
-                Option 4: {{ $q->option4 }} </br>
-                Correct Option: {{ $q->correctAnswer }}
+                <div class="option"> Option 1: {{ $q->option1 }} </div></br>
+                <div class="option"> Option 2: {{ $q->option2 }} </div></br>
+                <div class="option"> Option 3: {{ $q->option3 }} </div></br>
+                <div class="option"> Option 4: {{ $q->option4 }} </div></br>
+                <div class="correctOption"> Correct Option: {{ $q->correctAnswer }} </div>
             </div>
         @empty
             No Question Avaliable

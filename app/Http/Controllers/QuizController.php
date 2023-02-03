@@ -6,6 +6,8 @@ use App\Models\Question;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File; 
+
 
 class QuizController extends Controller
 {
@@ -121,6 +123,7 @@ class QuizController extends Controller
         //     Question::destroy($q);
         // }
         $quiz->delete();
+        File::delete('uploads/'.$quiz->image);
         return redirect('index-quiz');
 
     }
