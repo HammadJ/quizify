@@ -49,19 +49,17 @@
     }
 
     .hero-section {
-        background: url(hero.jpg) 0 0 no-repeat fixed;
-        position: relative;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 30px;
-        width: 95%;
-        height: 100%;
-        object-fit: cover;
-        height: 700px;
-        background-size: cover;
-        background-position: center;
+            background: url(hero.jpg) 0 0 no-repeat fixed;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 30px;
+            width: 95%;
+            height: 85%;
+            object-fit: cover;
+            background-size: cover;
+            background-position: center;
     }
 
     .hero-text {

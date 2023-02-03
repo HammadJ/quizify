@@ -6,12 +6,12 @@
         .hero-section {
             background: url(hero.jpg) 0 0 no-repeat fixed;
             position: absolute;
-            top: 60%;
+            top: 55%;
             left: 50%;
             transform: translate(-50%, -50%);
             border-radius: 30px;
             width: 95%;
-            height: 80%;
+            height: 85%;
             object-fit: cover;
             background-size: cover;
             background-position: center;
