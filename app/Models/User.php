@@ -42,7 +42,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function scores(){
-        return $this->hasMany(Score::class);
+
+    public function quizzes(){
+        return $this->belongsToMany(Quiz::class,'scores','user_id','quiz_id')->withPivot('score','totalScore');
     }
 }

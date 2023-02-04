@@ -15,7 +15,7 @@ class Quiz extends Model
         return $this->hasMany(Question::class);
     }
 
-    public function score(){
-        return $this->hasMany(score::class);
+    public function users(){
+        return $this->belongsToMany(User::class,'scores','quiz_id','user_id')->withPivot('score','totalScore');
     }
 }

@@ -70,14 +70,15 @@
         </div>
 
         @forelse ($score as $s)
-            <div class="row highlight">
-                <div class="rank">{{ $i++ }}</div>
-                {{-- {{dd($s->user_id)}} --}}
-                <div class="name">{{ $s->user_id }}</div>
-                <div class="name">{{ $s->quiz_id }}</div>
-                <div class="name">{{ $s->totalScore }}</div>
-                <div class="score">{{ $s->score }}</div>
-            </div>
+            @foreach ($s->quizzes as $quiz)
+                <div class="row highlight">
+                    <div class="rank">{{ $i++ }}</div>
+                    <div class="name">{{ $s->name }}</div>
+                    <div class="name">{{ $quiz->title }}</div>
+                    <div class="name">{{ $quiz->pivot->totalScore }}</div>
+                    <div class="score">{{ $quiz->pivot->score }}</div>
+                </div>
+            @endforeach
         @empty
             No Record Avalible
         @endforelse

@@ -20,14 +20,13 @@ class ScoreController extends Controller
     {
         $id = Auth::id();
 
-        $score=Score::all()->where('user_id',$id);
+        $score=User::with('quizzes')->get()->where('id',$id);
         return view('score.index',compact('score'));
     }
 
     public function leaderboard()
     {
-
-        $score=Score::all();
+        $score=User::with('quizzes')->get()->where('quizzes','!=','[]');
         return view('score.leaderboard',compact('score'));
     }
 

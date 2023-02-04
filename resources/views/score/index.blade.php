@@ -68,12 +68,12 @@
             <div class="score">Obtain Score</div>
         </div>
 
-        @forelse ($score as $s)
+        @forelse ($score->first()->quizzes as $quiz)
             <div class="row highlight">
                 <div class="rank">{{ $i++ }}</div>
-                <div class="name">{{ $s->quiz_id }}</div>
-                <div class="name">{{ $s->totalScore }}</div>
-                <div class="score">{{ $s->score }}</div>
+                <div class="name">{{ $quiz->title }}</div>
+                <div class="name">{{ $quiz->pivot->totalScore }}</div>
+                <div class="score">{{ $quiz->pivot->score }}</div>
             </div>
         @empty
             No Record Avalible

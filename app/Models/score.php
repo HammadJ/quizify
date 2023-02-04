@@ -10,12 +10,4 @@ class score extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function quiz(){
-        return $this->belongsTo(Quiz::class);
-    }
-
-    public function users(){
-        return $this->belongsTo(User::class);
-    }
-
 }
