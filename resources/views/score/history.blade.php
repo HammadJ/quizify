@@ -57,26 +57,23 @@
     </style>
 
     <div class="leaderboard">
-        <div class="header">Quiz Leaderboard</div>
+        <div class="header">Quiz History</div>
 
         <p hidden>{{ $i = 1 }}</p>
 
         <div class="row highlight">
             <div class="rank">No.</div>
-            <div class="score">Quiz Name</div>
             <div class="score">Total Score</div>
             <div class="score">Obtain Score</div>
-            <div class="score"></div>
             <div class="score">Date & Time</div>
         </div>
         
-        @forelse ($score->first()->quizzes as $quiz)
+        @forelse ($score as $sc)
             <div class="row highlight">
                 <div class="rank">{{ $i++ }}</div>
-                <div class="name">{{ $quiz->title }}</div>
-                <div class="name">{{ $quiz->pivot->totalScore }}</div>
-                <div class="score">{{ $quiz->pivot->score }}</div>
-                <div class="name">{{ $quiz->pivot->created_at }}</div>
+                <div class="name">{{ $sc->totalScore }}</div>
+                <div class="score">{{ $sc->score }}</div>
+                <div class="name">{{ $sc->created_at }}</div>
 
             </div>
         @empty

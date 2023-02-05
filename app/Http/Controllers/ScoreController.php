@@ -20,14 +20,14 @@ class ScoreController extends Controller
     {
         $id = Auth::id();
 
-        $score=User::with('quizzes')->get()->where('id',$id);
-        return view('score.index',compact('score'));
+        $score = User::with('quizzes')->get()->where('id', $id);
+        return view('score.index', compact('score'));
     }
 
     public function leaderboard()
     {
-        $score=User::with('quizzes')->get()->where('quizzes','!=','[]');
-        return view('score.leaderboard',compact('score'));
+        $score = User::with('quizzes')->get()->where('quizzes', '!=', '[]');
+        return view('score.leaderboard', compact('score'));
     }
 
     /**
@@ -111,12 +111,12 @@ class ScoreController extends Controller
         $i = 0;
         foreach ($questions as $q) {
             $totalMarks++;
-            if(empty($request->field[$i]['answer']) == false) {
+            if (empty($request->field[$i]['answer']) == false) {
                 $question[$i] = $q;
                 $i++;
             }
         }
-        
+
         $marks = 0;
 
         for ($i = 0; $i < count($question); $i++) {
@@ -139,26 +139,35 @@ class ScoreController extends Controller
         $score = $marks;
         $totalScore = $totalMarks;
 
-        if ($sc->count() >= 1) {
-            $sc=$sc->first();
-            $sc->update([
-                'user_id' => $id,
-                'quiz_id' => $request->quiz_id,
-                'score' => $marks,
-                'totalScore' => $totalMarks
-            ]);
-        }
-        else{   
-            Score::create([
-                'user_id' => $id,
-                'quiz_id' => $request->quiz_id,
-                'score' => $marks,
-                'totalScore' => $totalMarks
-            ]);
-            
-        }
+        // if ($sc->count() >= 1) {
+        //     $sc=$sc->first();
+        //     $sc->update([
+        //         'user_id' => $id,
+        //         'quiz_id' => $request->quiz_id,
+        //         'score' => $marks,
+        //         'totalScore' => $totalMarks
+        //     ]);
+        // }
+        // else{   
+        Score::create([
+            'user_id' => $id,
+            'quiz_id' => $request->quiz_id,
+            'score' => $marks,
+            'totalScore' => $totalMarks
+        ]);
+
+        // }
 
 
         return View('score/show', compact('quiz_id', 'quiz_name', 'score', 'totalScore', 'user_id'));
+    }
+
+    public function history(quiz $quiz)
+    {
+
+        $id = Auth::id();
+        $score = Score::all()->where('quiz_id', $quiz->id)->where('user_id', $id)->sortByDesc('updated_at');
+
+        return View('score/history', compact('score'));
     }
 }

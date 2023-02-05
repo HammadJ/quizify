@@ -89,8 +89,8 @@
                 <li><a href="../create-quiz">Create Quiz</a></li>
                 <li><a href="../leaderboard">Leaderboard</a></li>
             @else
-                <li><a href="userIndex-quiz">Quizzes</a></li>
-                <li><a href="index-score">Leaderboard</a></li>
+                <li><a href="../userIndex-quiz">Quizzes</a></li>
+                <li><a href="../index-score">Leaderboard</a></li>
             @endif
 
             <li class="dropdown">

@@ -26,18 +26,29 @@
         }
     </style>
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
     <div class="container">
-        <div hidden> {{$i=1}} </div>
+        <div hidden> {{ $i = 1 }} </div>
         @forelse ($question as $q)
-            <h2>Question {{$i++}} </h2>
+            <h2>Question {{ $i++ }} </h2>
             <h2>{{ $q->question }}</h2>
             <button onclick="location.href='../edit-question/{{ $q->id }}';">Edit Question</button>
             <button onclick="location.href='../delete-question/{{ $q->id }}';">Delete Question</button>
         @empty
             No Question Available
-            @endforelse
-            
-            <button onclick=" location.href='../create-question/{{$quiz->id}}' ">Add Question</button>
+        @endforelse
+
+        <button onclick=" location.href='../create-question/{{ $quiz->id }}' ">Add Question</button>
 
 
 

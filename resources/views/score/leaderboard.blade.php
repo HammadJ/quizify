@@ -67,8 +67,11 @@
             <div class="score">Quiz Name</div>
             <div class="score">Total Score</div>
             <div class="score">Obtain Score</div>
+            <div class="score">Date & Time</div>
+            <div class="score"></div>
         </div>
 
+        
         @forelse ($score as $s)
             @foreach ($s->quizzes as $quiz)
                 <div class="row highlight">
@@ -77,6 +80,7 @@
                     <div class="name">{{ $quiz->title }}</div>
                     <div class="name">{{ $quiz->pivot->totalScore }}</div>
                     <div class="score">{{ $quiz->pivot->score }}</div>
+                    <div class="score">{{ $quiz->pivot->created_at }}</div>
                 </div>
             @endforeach
         @empty

@@ -70,6 +70,17 @@
         }
     </style>
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
     <div class="container">
         <h1>Create a Quiz</h1>
         <form action="../store-question" method="POST">
@@ -105,7 +116,7 @@
                         '][option3]" placeholder="Option3" /><input type="text" name="field[' + i +
                         '][option4]" placeholder="Option4" /><input type="text" name="field[' + i +
                         '][correctAnswer]" placeholder="Correct Option" /><button type="button" class="add-question-btn">Remove</button></div>'
-                        );
+                    );
                     e.preventDefault();
                 });
                 $(document).on('click', '.remove-div', function() {

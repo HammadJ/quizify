@@ -49,17 +49,17 @@
     }
 
     .hero-section {
-            background: url(hero.jpg) 0 0 no-repeat fixed;
-            position: absolute;
-            top: 55%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 30px;
-            width: 95%;
-            height: 85%;
-            object-fit: cover;
-            background-size: cover;
-            background-position: center;
+        background: url(hero.jpg) 0 0 no-repeat fixed;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 30px;
+        width: 95%;
+        height: 85%;
+        object-fit: cover;
+        background-size: cover;
+        background-position: center;
     }
 
     .hero-text {
@@ -129,7 +129,18 @@
         <a href="#" class="logo">Quizify</a>
     </nav>
 </header>
-<div class="hero-section" >
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<div class="hero-section">
     <div class="hero-overlay">
         <div class="hero-text">
             <h1>Welcome to Our Quiz Website</h1>

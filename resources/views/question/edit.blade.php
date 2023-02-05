@@ -3,7 +3,6 @@
 
 @section('contents')
     <style>
-       
         .container {
             max-width: 600px;
             margin: 50px auto;
@@ -47,6 +46,16 @@
         }
     </style>
 
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
 
     <div class="container">

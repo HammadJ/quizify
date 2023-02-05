@@ -72,20 +72,28 @@
         }
     </style>
 
-    <div class="hero-section" >
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
+    <div class="hero-section">
         <div class="hero-overlay">
             <div class="hero-text">
                 <h1>Welcome to Our Quiz Website</h1>
                 <p>Test your knowledge and challenge your friends</p>
                 @if (Auth::id() == 1)
                     <a href="create-quiz" class="hero-btn">Create Quiz</a>
-
                 @else
                     <a href="userIndex-quiz" class="hero-btn">Start Quiz</a>
-                    
                 @endif
             </div>
         </div>
     </div>
-
 @endsection

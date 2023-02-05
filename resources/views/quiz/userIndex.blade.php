@@ -48,15 +48,26 @@
         }
     </style>
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
 
     <h1>All Quizzes</h1>
     <div class="quiz-container">
 
         @foreach ($quiz as $q)
             <div class="quiz-card">
-                <img src="uploads/{{$q->image}}" alt="Quiz Image">
+                <img src="uploads/{{ $q->image }}" alt="Quiz Image">
                 <h4>{{ $q->title }}</h4>
                 <button onclick="location.href='userShow-quiz/{{ $q->id }}';" class="start-quiz-btn">Start Quiz</button>
+                <button onclick="location.href='showHistory/{{ $q->id }}';" class="start-quiz-btn">View History</button>
             </div>
         @endforeach
 

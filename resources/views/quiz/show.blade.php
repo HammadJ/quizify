@@ -25,7 +25,7 @@
             border-radius: 20px;
         }
 
-        .option{
+        .option {
             font-size: 20px;
         }
 
@@ -39,26 +39,26 @@
             margin-right: 10px;
         }
 
-        h5{
+        h5 {
             font-weight: lighter;
             font-size: 12px;
             margin-bottom: 8px;
         }
 
-        h2{
+        h2 {
             margin-top: 1px;
         }
 
-        .correctOption{
+        .correctOption {
             font-size: 20px;
             background-color: #9149fe;
             border-radius: 10px;
             width: 40%;
-            color:white;
+            color: white;
             text-align: center;
-            
+
             margin: auto;
-            padding:10px 10px;
+            padding: 10px 10px;
         }
 
         #submit {
@@ -77,6 +77,17 @@
             background-color: #781eff;
         }
     </style>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
 
     <p hidden>{{ $i = 1 }}</p>
     <div class="quiz-container">

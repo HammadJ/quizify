@@ -49,7 +49,7 @@
 
     input[type="file"] {
         font-family: 'Varela Round', sans-serif;
-        
+
     }
 
     button[type="submit"] {
@@ -64,9 +64,22 @@
         cursor: pointer;
         margin-top: 30px;
     }
+
+    
 </style>
 
 @section('contents')
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div class="container">
         <h1>Create a Quiz</h1>
         <form action="store-quiz" method="POST" enctype="multipart/form-data">

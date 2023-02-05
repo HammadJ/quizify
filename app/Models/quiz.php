@@ -16,6 +16,6 @@ class Quiz extends Model
     }
 
     public function users(){
-        return $this->belongsToMany(User::class,'scores','quiz_id','user_id')->withPivot('score','totalScore');
+        return $this->belongsToMany(User::class,'scores','quiz_id','user_id')->withPivot('score','totalScore')->withTimestamps();
     }
 }

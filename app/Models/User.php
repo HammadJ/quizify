@@ -44,6 +44,6 @@ class User extends Authenticatable
 
 
     public function quizzes(){
-        return $this->belongsToMany(Quiz::class,'scores','user_id','quiz_id')->withPivot('score','totalScore');
+        return $this->belongsToMany(Quiz::class,'scores','user_id','quiz_id')->withPivot('score','totalScore')->withTimestamps();
     }
 }
