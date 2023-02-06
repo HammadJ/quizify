@@ -65,7 +65,7 @@
         <div class="result-card">
             <h2>You scored:</h2>
             <h3 id="score">{{ $score }}/{{ $totalScore }}</h3>
-            <p id="comment">You did okay. Try again and see if you can improve your score.</p>
+            <p id="comment">Good effort, {{Auth::user()->name}}.</p>
             <button id="try-again" type="button" onclick="location.href='userShow-quiz/{{ $quiz_id }}' ">Try
                 Again</button>
         </div>
