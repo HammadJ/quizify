@@ -115,7 +115,7 @@
                         '][option2]" placeholder="Option2" /><input type="text" name="field[' + i +
                         '][option3]" placeholder="Option3" /><input type="text" name="field[' + i +
                         '][option4]" placeholder="Option4" /><input type="text" name="field[' + i +
-                        '][correctAnswer]" placeholder="Correct Option" /><button type="button" class="add-question-btn">Remove</button></div>'
+                        '][correctAnswer]" placeholder="Correct Option" /><button type="button" class="add-question-btn remove-div">Remove</button></div>'
                     );
                     e.preventDefault();
                 });
